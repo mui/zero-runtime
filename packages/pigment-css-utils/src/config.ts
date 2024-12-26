@@ -40,6 +40,9 @@ type PigmentFeature = {
 export type PigmentConfig = Omit<Partial<PluginOptions>, 'features'> & {
   wywFeatures?: PluginOptions['features'];
   features?: PigmentFeature;
+export type PigmentConfig = Partial<IOptions> & {
+  features?: PigmentFeature;
+  generateClassName?: <M, E>(data: GenerateClassData<M, E>) => string;
   themeArgs?: {
     theme: Theme;
   };
